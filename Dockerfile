@@ -16,7 +16,7 @@ RUN apt-get install -y git golang
 
 # clone logstash-forwarder
 RUN git clone git://github.com/elasticsearch/logstash-forwarder.git /tmp/logstash-forwarder
-RUN cd /tmp/logstash-forwarder && git checkout v0.3.1 && go build
+RUN cd /tmp/logstash-forwarder && git checkout master && go build
 
 RUN mkdir /opt/forwarder && cp /tmp/logstash-forwarder/logstash-forwarder /opt/forwarder/logstash-forwarder
 
