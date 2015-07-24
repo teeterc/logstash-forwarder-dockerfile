@@ -2,7 +2,7 @@
 #
 # A tool to collect logs locally in preparation for processing elsewhere
 #
-# VERSION               0.3.1
+# VERSION               0.4.0
 
 FROM      debian:jessie
 MAINTAINER Deni Bertovic "me@denibertovic.com"
@@ -16,7 +16,7 @@ RUN apt-get install -y git golang
 
 # clone logstash-forwarder
 RUN git clone git://github.com/elasticsearch/logstash-forwarder.git /tmp/logstash-forwarder
-RUN cd /tmp/logstash-forwarder && git checkout master && go build
+RUN cd /tmp/logstash-forwarder && git checkout v0.4.0 && go build
 
 RUN mkdir /opt/forwarder && cp /tmp/logstash-forwarder/logstash-forwarder /opt/forwarder/logstash-forwarder
 
